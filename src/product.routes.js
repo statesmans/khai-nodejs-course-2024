@@ -4,11 +4,6 @@ const { blockSpecialBrand } = require('./middleware');
 
 const router = express.Router();
 
-// handle get request for path /products
-router.get('/products', (request, response) => {
-    return response.json(products);
-});
-
 // handle get request for path /products/:brand
 router.get('/products/:brand', blockSpecialBrand, (request, response) => {
     const { brand } = request.params; // Access the brand parameter from the URL
